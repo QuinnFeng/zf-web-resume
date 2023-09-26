@@ -1,0 +1,99 @@
+section {
+  margin-top: 3rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.info-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-right: auto;
+}
+
+.loc {
+  padding: 0 2px;
+}
+
+.contact {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.contact span i {
+  margin-right: 0.3125rem;
+}
+
+.media-link {
+  margin-right: 3rem;
+}
+
+.contact span a,
+.media-link span a {
+  text-decoration: none;
+  color: black;
+}
+
+.media-link span a i {
+  font-size: 1.5rem;
+}
+.linkedin {
+  padding: 0 2px;
+}
+
+.github {
+  padding: 0 0.5px;
+}
+
+.job {
+  margin-bottom: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.skills li {
+  margin-bottom: 0.25rem;
+}
+
+.education p i,
+.time-loc span i {
+  margin-right: 0.5rem;
+  color: #ccc;
+}
+
+.thicker-hr {
+  border: none;
+  height: 1px; /* Adjust the thickness as needed */
+  background-color: gray; /* Adjust the color as needed */
+}
+
+.time-loc {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.bullet-point li {
+  margin-bottom: 0.25rem;
+}
+
+.education {
+  display: flex;
+}
+
+.education-left {
+  margin-right: auto;
+}
