@@ -34,7 +34,7 @@ section {
 }
 
 .media-link {
-  margin-right: 3rem;
+  margin-right: 1.5rem;
 }
 
 .contact span a,
@@ -52,6 +52,10 @@ section {
 
 .github {
   padding: 0 0.5px;
+}
+
+.house {
+  transform: scale(0.925);
 }
 
 .job {
