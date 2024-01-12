@@ -131,3 +131,8 @@ section {
 .education-left {
   margin-right: auto;
 }
+
+.alts{
+  display: none;
+  gap: 10px;
+}
