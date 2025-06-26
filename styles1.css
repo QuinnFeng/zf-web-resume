@@ -1,6 +1,6 @@
-section {
+/* section {
   margin-top: 3rem;
-}
+} */
 
 .main {
   display: flex;
@@ -20,16 +20,12 @@ section {
   margin-right: auto;
 }
 
-.loc {
-  padding: 0 2px;
-}
-
 .contact {
   display: flex;
   gap: 0.625rem;
 }
 
-.contact span i {
+.contact span:not(:nth-child(2)) i {
   margin-right: 0.3125rem;
 }
 
@@ -132,7 +128,7 @@ section {
   margin-right: auto;
 }
 
-.alts{
+.alts {
   display: none;
   gap: 10px;
 }
