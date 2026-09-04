@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Developer Resume</title>
+    <style>
+      /* ===== RESET & BASE ===== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+        font-size: 10pt;
+        line-height: 1.3;
+        color: #222;
+        background: #fff;
+      }
+
+      /* ===== PAGE SETUP ===== */
+      @page {
+        size: letter;
+        margin: 0.5in 0.6in 0.5in 0.6in;
+      }
+
+      /* ===== PRINT SETTINGS ===== */
+      @media print {
+        body {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .avoid-break {
+          page-break-inside: avoid;
+          break-inside: avoid;
+        }
+      }
+
+      /* ===== RESUME CONTAINER ===== */
+      .resume {
+        max-width: 7.3in;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff;
+      }
+
+      /* ===== HEADER ===== */
+      .header {
+        text-align: center;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 8px;
+      }
+
+      .name {
+        font-size: 18pt;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+        color: #1a1a1a;
+      }
+
+      .contact-info {
+        font-size: 9.5pt;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      .contact-info span {
+        margin: 0 5px;
+      }
+
+      .contact-info a {
+        color: #555;
+        text-decoration: none;
+      }
+
+      /* ===== SECTION HEADERS ===== */
+      h2 {
+        font-size: 10.5pt;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 3px;
+        margin-bottom: 6px;
+        margin-top: 10px;
+        color: #1a1a1a;
+      }
+
+      /* ===== SUMMARY ===== */
+      .summary {
+        text-align: justify;
+        margin-bottom: 4px;
+        color: #333;
+      }
+
+      /* ===== SKILLS ===== */
+      .skills {
+        margin-bottom: 4px;
+      }
+
+      .skill-row {
+        display: flex;
+        margin-bottom: 2px;
+      }
+
+      .skill-label {
+        font-weight: bold;
+        min-width: 130px;
+        color: #333;
+      }
+
+      .skill-value {
+        flex: 1;
+        color: #444;
+      }
+
+      /* ===== EXPERIENCE ===== */
+      .job {
+        margin-bottom: 8px;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 3px;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 2px;
+      }
+
+      .job-title {
+        font-weight: bold;
+        font-size: 10.5pt;
+      }
+
+      .job-company {
+        font-size: 10pt;
+        color: #555;
+        margin-left: 6px;
+      }
+
+      .job-date {
+        font-size: 9pt;
+        color: #777;
+        white-space: nowrap;
+        font-style: italic;
+      }
+
+      .job-location {
+        font-size: 9pt;
+        color: #777;
+      }
+
+      /* ===== BULLET POINTS ===== */
+      ul {
+        margin: 0 0 4px 16px;
+        padding: 0;
+        list-style-type: disc;
+      }
+
+      li {
+        margin-bottom: 2px;
+        line-height: 1.25;
+        color: #333;
+      }
+
+      /* ===== PROJECTS ===== */
+      .project {
+        margin-bottom: 6px;
+      }
+
+      .project-title {
+        font-weight: bold;
+        font-size: 10pt;
+      }
+
+      .project-date {
+        font-size: 9pt;
+        color: #777;
+        font-style: italic;
+        white-space: nowrap;
+      }
+
+      /* ===== EDUCATION ===== */
+      .education {
+        margin-bottom: 4px;
+      }
+
+      .education-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      .education-degree {
+        font-weight: bold;
+      }
+
+      .education-school {
+        font-size: 10pt;
+        color: #555;
+      }
+
+      .education-date {
+        font-size: 9pt;
+        color: #777;
+        font-style: italic;
+        white-space: nowrap;
+      }
+
+      /* ===== OTHER EMPLOYMENT ===== */
+      .other-job {
+        margin-bottom: 6px;
+      }
+
+      .other-job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2px;
+      }
+
+      .other-job-title {
+        font-weight: bold;
+        font-size: 10pt;
+      }
+
+      .other-job-company {
+        font-size: 9.5pt;
+        color: #555;
+        margin-left: 5px;
+      }
+
+      .other-job-date {
+        font-size: 9pt;
+        color: #777;
+        font-style: italic;
+        white-space: nowrap;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media screen and (max-width: 768px) {
+        .resume {
+          padding: 10px;
+          max-width: 100%;
+        }
+
+        .job-header,
+        .education-row,
+        .other-job-header {
+          flex-direction: column;
+        }
+
+        .job-date,
+        .job-location,
+        .education-date,
+        .other-job-date {
+          margin-top: 2px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="resume">
+      <!-- HEADER -->
+      <div class="header">
+        <div class="name">[YOUR NAME]</div>
+        <div class="contact-info">
+          <span>📍 [CITY, STATE]</span>
+          <span>✉️ <a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a></span>
+          <span>📱 <a href="tel:[YOUR PHONE]">[YOUR PHONE]</a></span>
+        </div>
+      </div>
+
+      <!-- PROFESSIONAL SUMMARY -->
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        [Write 2–3 sentences about your experience, skills, and what you bring. Example: "Software developer with
+        experience building web applications using Java, Spring Boot, React, and SQL. Recent focus on full-stack
+        development, including personal projects with Node.js and React. Strong problem-solving skills and a commitment
+        to continuous learning."]
+      </p>
+
+      <!-- TECHNICAL SKILLS -->
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <div class="skill-row">
+          <span class="skill-label">Languages:</span>
+          <span class="skill-value">Java, Python, JavaScript, TypeScript, SQL, HTML5, CSS3</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Backend:</span>
+          <span class="skill-value">Spring Boot, Spring MVC, Spring Security, Spring Data JPA, Hibernate, JDBC, Node.js,
+            Express.js</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Frontend:</span>
+          <span class="skill-value">React, Redux, TypeScript, Material UI, Bootstrap, SCSS</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Architecture:</span>
+          <span class="skill-value">REST APIs, Microservices, Apache Kafka</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Cloud & DevOps:</span>
+          <span class="skill-value">AWS (EC2, S3, RDS, Lambda), Docker, Jenkins, CI/CD</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Database:</span>
+          <span class="skill-value">Oracle SQL, MySQL, PostgreSQL, MongoDB</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Testing & Tools:</span>
+          <span class="skill-value">JUnit, Mockito, Jest, Postman, Git, Jira, IntelliJ, VS Code</span>
+        </div>
+      </div>
+
+      <!-- PROFESSIONAL EXPERIENCE -->
+      <h2>Professional Experience</h2>
+
+      <!-- MERCURY SYSTEMS -->
+      <div class="job avoid-break">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Software Engineer</span>
+            <span class="job-company">Mercury Systems, Inc.</span>
+          </div>
+          <div>
+            <span class="job-date">Apr 2022 – Apr 2023</span>
+            <span class="job-location">| Remote, NJ</span>
+          </div>
+        </div>
+        <ul>
+          <li>[Bullet point 1 — e.g., "Developed and maintained CRM software, ensuring alignment with business needs."]
+          </li>
+          <li>[Bullet point 2 — e.g., "Designed CRUD functionality and approval workflows for employee, category, order,
+            and customer modules."]</li>
+          <li>[Bullet point 3 — e.g., "Developed RESTful APIs using Java, Spring Boot, and Spring MVC, enabling scalable
+            data access."]</li>
+          <li>[Bullet point 4 — e.g., "Built web interfaces using React, HTML, and CSS, ensuring consistent UI across
+            modules."]</li>
+          <li>[Bullet point 5 — e.g., "Worked with Oracle and MySQL databases, and utilized AWS EC2, S3, and RDS for
+            hosting and storage."]</li>
+          <li>[Bullet point 6 — e.g., "Participated in Agile/Scrum development using Jira for project management."]</li>
+        </ul>
+      </div>
+
+      <!-- PERSONAL PROJECTS -->
+      <h2>Personal Projects</h2>
+
+      <div class="project avoid-break">
+        <div class="job-header">
+          <div>
+            <span class="project-title">Full Stack CRUD Application</span>
+          </div>
+          <div>
+            <span class="project-date">2023 – 2025</span>
+          </div>
+        </div>
+        <ul>
+          <li>Built a full-stack application using Node.js, Express, and React with RESTful API architecture.</li>
+          <li>Implemented CRUD operations with database integration (MongoDB/PostgreSQL).</li>
+          <li>Developed responsive UI components with React hooks and modern state management.</li>
+          <li>Integrated authentication and user management features.</li>
+        </ul>
+      </div>
+
+      <div class="project avoid-break">
+        <div class="job-header">
+          <div>
+            <span class="project-title">Frontend Learning Projects</span>
+          </div>
+          <div>
+            <span class="project-date">2023 – 2025</span>
+          </div>
+        </div>
+        <ul>
+          <li>Built multiple React applications to deepen understanding of hooks, context, and state management.</li>
+          <li>Experimented with TypeScript integration and modern CSS frameworks.</li>
+          <li>Deployed applications to cloud platforms (AWS/Vercel) to practice deployment workflows.</li>
+        </ul>
+      </div>
+
+      <!-- OTHER EMPLOYMENT (Optional) -->
+      <h2>Other Employment</h2>
+
+      <div class="other-job avoid-break">
+        <div class="other-job-header">
+          <div>
+            <span class="other-job-title">Substitute Teacher / Gig Worker</span>
+            <span class="other-job-company">Various Locations</span>
+          </div>
+          <div>
+            <span class="other-job-date">2023 – 2025</span>
+          </div>
+        </div>
+        <ul>
+          <li>Provided classroom management and educational support in K-12 settings.</li>
+          <li>Managed delivery logistics with Uber Eats, demonstrating reliability and time management.</li>
+          <li>Maintained consistent work ethic while pursuing personal development.</li>
+        </ul>
+      </div>
+
+      <!-- EDUCATION -->
+      <h2>Education</h2>
+      <div class="education avoid-break">
+        <div class="education-row">
+          <div>
+            <span class="education-degree">B.S. in Mathematics & Computer Science</span>
+            <span class="education-school">| Christian Brothers University</span>
+          </div>
+          <span class="education-date">Aug 2016 - Dec 2020</span>
+        </div>
+        <div class="education-row">
+          <span style="color: #777; font-size: 9.5pt;">Memphis, TN</span>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

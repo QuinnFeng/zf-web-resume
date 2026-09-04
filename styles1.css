@@ -132,3 +132,50 @@
   display: none;
   gap: 10px;
 }
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px; /* Slightly more space before bullets */
+  padding-bottom: 3px; /* Adds a little space under the text */
+  border-bottom: 1px solid #e0e0e0; /* Adds a subtle divider under the header */
+}
+
+/* LEFT SIDE: Title and Company */
+.job-left {
+  display: flex;
+  align-items: baseline;
+  gap: 8px; /* Adds space between title and company */
+}
+
+.job-title {
+  font-weight: bold;
+  font-size: 13pt;
+  color: #222;
+}
+
+.job-company {
+  font-size: 13pt;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+/* RIGHT SIDE: Date and Location */
+.job-right {
+  display: flex;
+  align-items: baseline;
+  gap: 6px; /* Separates date and location */
+  font-size: 11pt;
+  color: #777;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.job-date {
+  font-style: italic;
+}
+
+.job-location {
+  color: #777;
+}
