@@ -125,7 +125,23 @@
 }
 
 .education-left {
-  margin-right: auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.education-left p {
+  margin: 0;
+}
+
+.education-left p:nth-of-type(2)::before {
+  content: " | ";
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.education-left p:nth-of-type(3) {
+  margin-left: auto;
 }
 
 .alts {
@@ -143,26 +159,30 @@
 }
 
 /* LEFT SIDE: Title and Company */
-.job-left {
+.job-left,
+.education-left {
   display: flex;
   align-items: baseline;
   gap: 8px; /* Adds space between title and company */
 }
 
-.job-title {
+.job-title,
+.degree {
   font-weight: bold;
   font-size: 13pt;
   color: #222;
 }
 
-.job-company {
+.job-company,
+.university-name {
   font-size: 13pt;
   color: #2c3e50;
   font-weight: bold;
 }
 
 /* RIGHT SIDE: Date and Location */
-.job-right {
+.job-right,
+.education-right {
   display: flex;
   align-items: baseline;
   gap: 6px; /* Separates date and location */
