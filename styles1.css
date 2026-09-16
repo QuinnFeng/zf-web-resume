@@ -122,6 +122,7 @@
 
 .education {
   display: flex;
+  margin-bottom: 1.5rem;
 }
 
 .education-left {
@@ -169,15 +170,29 @@
 .job-title,
 .degree {
   font-weight: bold;
-  font-size: 13pt;
   color: #222;
+}
+
+.job-title {
+  font-size: 13pt;
+}
+
+.degree {
+  font-size: 11pt;
 }
 
 .job-company,
 .university-name {
-  font-size: 13pt;
   color: #2c3e50;
   font-weight: bold;
+}
+
+.job-company{
+  font-size: 13pt;
+}
+
+.university-name {
+  font-size: 11pt;
 }
 
 /* RIGHT SIDE: Date and Location */
@@ -186,11 +201,12 @@
   display: flex;
   align-items: baseline;
   gap: 6px; /* Separates date and location */
-  font-size: 11pt;
   color: #777;
   white-space: nowrap;
   text-align: right;
+  font-size: 11pt;
 }
+
 
 .job-date {
   font-style: italic;
